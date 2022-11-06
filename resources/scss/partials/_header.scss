@@ -1,0 +1,7 @@
+header {
+    .navbar-brand {
+        img {
+            width: clamp(calculateRem(180px), 6vw, calculateRem(220px));
+        }
+    }
+}
