@@ -27,8 +27,11 @@ $grid-breakpoints: (
 );
 
 /*colors*/
-// $theme-colors: (
-//   'primary': $primary,
+$primary : #263483;
+$gray : #cbc1c1;
+
+$theme-colors: (
+'primary': $primary,
 //   'secondary': $secondary,
 //   'success': $success,
 //   'info': $info,
@@ -36,4 +39,5 @@ $grid-breakpoints: (
 //   'danger': $danger,
 //   'light': $light,
 //   'dark': $dark
-// );
+'gray' : $gray
+);

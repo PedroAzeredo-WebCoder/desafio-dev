@@ -25,34 +25,28 @@
     <title>[%title%]</title>
 
     <link rel="stylesheet" type="text/css" href="./app-assets/css/app.css">
-    
+
     [%css%]
 </head>
 
-<body class="vertical-layout vertical-menu-modern blank-page navbar-floating footer-static loginPage" data-open="click" data-menu="vertical-menu-modern" data-col="blank-page">
-    <!-- Login Content -->
-    <div class="app-content content ">
-        <div class="content-overlay"></div>
-        <div class="header-navbar-shadow"></div>
-        <div class="content-wrapper">
-            <div class="content-header row">
-            </div>
-            <div class="content-body">
-                <div class="auth-wrapper auth-basic px-2">
-                    <div class="auth-inner my-2">
-                        <div class='card mb-0'>
-                            <div class='card-body'>
-                                <img src="./app-assets/img/logo/logo.png" class="card-img-top" alt="Logo [%title%]" title="[%title%]">
-                                [%include_content%]
-                            </div>
+<body class="loginPage">
+    <main role="main">
+        <!-- Login Content -->
+        <div class="container">
+            <div class="row vh-100 justify-content-center align-items-center">
+                <div class="col-lg-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <img src="./app-assets/img/logo.svg" class="card-img-top" alt="Logo [%title%]" title="[%title%]">
+                            [%include_content%]
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+        <!-- Login Content -->
+    </main>
 
-    <!-- Login Content -->
     <script src="./app-assets/js/app.js"></script>
 
     [%js%]

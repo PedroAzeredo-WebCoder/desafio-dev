@@ -1,4 +1,8 @@
 form {
+    @extend .d-flex;
+    @extend .flex-column;
+    @extend .gap-3;
+
     br {
         display: none;
     }
@@ -8,6 +12,20 @@ form {
         resize: none;
         box-shadow: none;
         outline: none;
+    }
+
+    .field {
+        position: relative;
+
+        button {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translate(0, -50%);
+            font-size: 14px;
+            color: $gray;
+            @extend .btn;
+        }
     }
 
     .switch {

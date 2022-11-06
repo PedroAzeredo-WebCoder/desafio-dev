@@ -1,6 +1,7 @@
 require('jquery');
 require('bootstrap');
 require('@fortawesome/fontawesome-free');
+require('sweetalert/dist/sweetalert.min.js');
 require('jquery-mask-plugin/dist/jquery.mask.min');
 
 window._ = require('lodash');
@@ -100,31 +101,24 @@ jQuery(function () {
 
   // button to view password, if field has an ID
   function eyePass() {
-    element = $("[type='password']");
+    element = $("[type='password']")
     if (element.is('[id]')) {
-      element.after(
-        `<button type='button' class='showPass'><svg viewBox="0 0 24 24" width="24" height="24" stroke="#000" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></button>`
-      );
-      const buttons = element.after();
+      element.after("<button class='showPass' type='button'><i class='fa-solid fa-eye'></i></button>")
+      const buttons = element.after()
       buttons.each(function (i) {
-        const id = $(this).after().attr('id');
-        const button = $(this).siblings('.showPass').eq(i);
-        button.attr('toggle', '#' + id);
+        const id = $(this).after().attr('id')
+        const button = $(this).siblings('.showPass').eq(i)
+        button.attr('toggle', '#' + id)
         $(button).click(function () {
-          const input = $($(this).attr('toggle'));
+          $(button).children().toggleClass('fa-eye fa-eye-slash')
+          var input = $($(this).attr('toggle'))
           if (input.attr('type') == 'password') {
-            input.attr('type', 'text');
-            $(this)
-              .children('svg')
-              .html(
-                '<path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path><line x1="1" y1="1" x2="23" y2="23"></line>'
-              );
+            input.attr('type', 'text')
           } else {
-            input.attr('type', 'password');
-            $(this).children('svg').html('<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>');
+            input.attr('type', 'password')
           }
-        });
-      });
+        })
+      })
     }
   }
 });

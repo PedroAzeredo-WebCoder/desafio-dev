@@ -47,6 +47,7 @@ iframe {
 
 .card {
   overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 
 // margin's
@@ -122,6 +123,15 @@ iframe {
   }
 }
 
-.guUmhjM5MENUZAT3zA4zxMmZjgMFNzj {
-  display: none;
+button {
+  &:active {
+    border-color: transparent !important;
+  }
+}
+
+.loginPage {
+  background-image: url(../img/background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
