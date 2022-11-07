@@ -4,7 +4,7 @@ checkAccess("arquivosList");
 
 $table = new Table();
 $table->cardHeader(btn("Novo", "arquivosCad.php"));
-$table->addHeader("ID",                "text-center", "col-1");
+$table->addHeader("ID");
 $table->addHeader("Arquivo");
 
 $query = new sqlQuery();
@@ -14,7 +14,7 @@ $query->addcolumn("arquivo");
 
 if ($conn->query($query->getSQL()) && getDbValue($query->getCount()) != 0) {
     foreach ($conn->query($query->getSQL()) as $row) {
-        $table->addCol($row["id"], "text-center");
+        $table->addCol($row["id"]);
         $table->addCol($row["arquivo"]);
         $table->endRow();
     }

@@ -19,6 +19,7 @@ if (!empty($cad_arquivos_id)) {
 
 $form = new Form("arquivosCadSave.php");
 $form->addField(hiddenField($cad_arquivos_id, "cad_arquivos_id"));
+$form->setUpload(true);
 $form->addField(fileField("Arquivo", $f_arquivo));
 $form->addField(submitBtn("Salvar"));
 
