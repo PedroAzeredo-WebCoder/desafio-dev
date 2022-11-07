@@ -2,7 +2,7 @@
 require_once("./inc/common.php");
 checkAccess("usuariosList");
 
-$pagination = new Pagination();
+
 
 $table = new Table();
 $table->cardHeader(btn("Novo", "usuariosCad.php"));
@@ -28,9 +28,9 @@ if ($f_searchTableStatus || $f_searchTableStatus == "0") {
     $query->addWhere("status", "=", "'1'");
 }
 
-$query->setLimit(PAGITATION, $pagination->startLimit());
 
-$pagination->setSQL($query->getCount());
+
+
 
 if ($conn->query($query->getSQL())  && getDbValue($query->getCount()) != 0) {
     foreach ($conn->query($query->getSQL()) as $row) {
@@ -60,5 +60,5 @@ if ($conn->query($query->getSQL())  && getDbValue($query->getCount()) != 0) {
 $template = new Template("Listagem de Usuários");
 $template->addBreadcrumb("Home", "index.php");
 $template->addContent($table->writeHtml());
-$template->addContent($pagination->writeHtml());
+
 $template->writeHtml();

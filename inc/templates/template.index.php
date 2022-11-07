@@ -29,67 +29,35 @@
     [%css%]
 </head>
 
-<body class="vertical-layout vertical-menu-modern navbar-floating footer-static" data-open="click" data-menu="vertical-menu-modern" data-col="">
-    <!-- BEGIN: Header-->
-    [%include_topbar%]
-    <!-- END: Header-->
+<body>
+    <main role="main">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-2 bg-gray">
+                    [%include_sidebar%]
+                </div>
+                <div class="col-lg-10">
+                    [%include_topbar%]
 
-
-    <!-- BEGIN: Main Menu-->
-    <div class="main-menu menu-fixed menu-light menu-accordion menu-shadow" data-scroll-to-active="true">
-        <div class="navbar-header">
-            <ul class="nav navbar-nav flex-row">
-                <li class="nav-item me-auto d-flex align-items-center">
-                    <!-- <a class="navbar-brand" href="index.php"> -->
-                    <h2 class="brand-text mb-0" style="margin-left: 0.5rem;">Menu</h2>
-                    <!-- </a> -->
-                </li>
-                <li class="nav-item nav-toggle"><a class="nav-link modern-nav-toggle pe-0" data-bs-toggle="collapse"><i class="d-block d-xl-none text-primary toggle-icon font-medium-4 fa-solid fa-xmark"></i><i class="d-none d-xl-block collapse-toggle-icon font-medium-4 text-primary fa-solid fa-circle-dot"></i></a></li>
-            </ul>
-        </div>
-        <div class="shadow-bottom"></div>
-        [%include_sidebar%]
-    </div>
-    <!-- END: Main Menu-->
-
-    <!-- BEGIN: Content-->
-    <div class="app-content content ">
-        <div class="content-overlay"></div>
-        <div class="header-navbar-shadow"></div>
-        <div class="content-wrapper p-0">
-            <div class="content-header row">
-                <div class="content-header-left col-md-9 col-12 mb-2">
-                    <div class="row breadcrumbs-top">
-                        <div class="col-12">
-                            <h2 class="content-header-title float-start mb-0">[%title_page%]</h2>
-                            <div class="breadcrumb-wrapper">
-                                [%breadcrumb%]
-                            </div>
+                    <div class="container">
+                        <div class="card">
+                            <h2 class="card-title mb-0">[%title_page%]</h2>
+                            [%breadcrumb%]
                         </div>
+
+                        [%include_content%]
                     </div>
                 </div>
             </div>
-            <div class="content-body">
-                <!-- BEGIN: Cards -->
-                [%include_content%]
-                <!--/ END: Cards -->
-            </div>
         </div>
-    </div>
-    <!-- END: Content-->
+    </main>
 
-    <div class="sidenav-overlay"></div>
-    <div class="drag-target"></div>
-
-    <!-- Footer -->
-    <footer class="footer footer-static footer-light">
-        <p class="clearfix mb-0">
-            <span class="float-md-start d-block d-md-inline-block mt-25">
-                COPYRIGHT &copy; 2022 Desenvolvido por <a class="ms-25" href="https://www.linkedin.com/in/pedro-azeredo-dev/" target="_blank">Pedro Azeredo</a></a>
-            </span>
-        </p>
+    <footer>
+        <span>
+            COPYRIGHT &copy; 2022 Desenvolvido por <a href="https://www.linkedin.com/in/pedro-azeredo-dev/" target="_blank">Pedro Azeredo</a>
+        </span>
     </footer>
-    <!-- Footer -->
+
     <script src="./app-assets/js/app.js"></script>
 
     [%js%]

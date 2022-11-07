@@ -77,25 +77,25 @@ function getSession($name)
 }
 
 // funcao para testar login na página
-// function checkAccess($arquivo = NULL)
-// {
-// 	if ($arquivo != NULL) {
-// 		$test = getDbValue("SELECT id FROM cad_usuarios WHERE uniqid = '" . getSession('SYSGER') . "'");
-// 		if ($test != "") {
-// 			$test2 = getDbValue("SELECT COUNT(*) FROM usuarios_has_menu WHERE cad_usuarios_id = " . $test . " AND adm_menu_id = (SELECT id FROM adm_menu WHERE link = '" . $arquivo . ".php' LIMIT 1)");
-// 			if ($test2 == 0) {
-// 				setSession("SYSGER", "");
-// 				redirect('login.php');
-// 			}
-// 		}
-// 	} else {
-// 		$test = getDbValue("SELECT id FROM cad_usuarios WHERE uniqid = '" . getSession('SYSGER') . "'");
-// 		if ($test == "") {
-// 			setSession("SYSGER", "");
-// 			redirect('login.php');
-// 		}
-// 	}
-// }
+function checkAccess($arquivo = NULL)
+{
+	if ($arquivo != NULL) {
+		$test = getDbValue("SELECT id FROM cad_usuarios WHERE uniqid = '" . getSession('SYSGER') . "'");
+		if ($test != "") {
+			$test2 = getDbValue("SELECT COUNT(*) FROM usuarios_has_menu WHERE cad_usuarios_id = " . $test . " AND adm_menu_id = (SELECT id FROM adm_menu WHERE link = '" . $arquivo . ".php' LIMIT 1)");
+			if ($test2 == 0) {
+				setSession("SYSGER", "");
+				redirect('login.php');
+			}
+		}
+	} else {
+		$test = getDbValue("SELECT id FROM cad_usuarios WHERE uniqid = '" . getSession('SYSGER') . "'");
+		if ($test == "") {
+			setSession("SYSGER", "");
+			redirect('login.php');
+		}
+	}
+}
 
 /*****************************************************************************************************
 		retorna o valor de um campo através de expressão sql
